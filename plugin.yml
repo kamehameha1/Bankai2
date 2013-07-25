@@ -1,0 +1,6 @@
+name: Bankai2
+main: me.kamehameha1.bankai2.bankai
+version: 1.0
+commands:
+  bankai:
+  hallow:
