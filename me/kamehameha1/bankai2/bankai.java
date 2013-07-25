@@ -201,11 +201,11 @@ public class bankai extends JavaPlugin implements Listener {
           player = Bukkit.getPlayer(args[0]);
           if (player == null) {
             sender
-                .sendMessage(ChatColor.RED + "That player isn't online!");
+                .sendMessage(ChatColor.RED + "That Player Is Offline!");
             return true;
           } else {
                         player.sendMessage(ChatColor.RED + sender.getName()
-                            + " just helped you achieve bankai!");
+                            + " Just Helped You Achieve Bankai!");
                     }
         }
         final Player p = player;
@@ -220,7 +220,7 @@ public class bankai extends JavaPlugin implements Listener {
                 public void run() {
                   Bukkit.broadcastMessage(ChatColor.DARK_RED + "* "
                       + ChatColor.stripColor(p.getDisplayName())
-                      + ChatColor.RESET + ChatColor.DARK_RED + " grunts");
+                      + ChatColor.RESET + ChatColor.DARK_RED + " grunts with effort");
                 }
               }, 20L);
           Bukkit.getServer().getScheduler()
@@ -230,7 +230,7 @@ public class bankai extends JavaPlugin implements Listener {
                       + ChatColor.RESET + "> " + ChatColor.DARK_RED + "-kai!");
                   if (new Random().nextInt(5) != 1) {
                     Bukkit.broadcastMessage(ChatColor.DARK_RED
-                        + "Dark forces envelope " + p.getName() + "!");
+                        + "Dark Forces Envelope " + p.getName() + "...");
                     p.setHealth(20);
                     p.setFoodLevel(20);
                     for (int n = 0; n <= 3; n++) {
@@ -246,10 +246,10 @@ public class bankai extends JavaPlugin implements Listener {
                     bankaiUsers.add(ichy);
                   } else {
                     Bukkit.broadcastMessage(ChatColor.DARK_RED
-                        + "Dark forces envelope " + p.getName() + "!");
+                        + "Dark Forces Envelope " + p.getName() + "!");
                     Bukkit
                         .broadcastMessage(ChatColor.DARK_RED
-                            + "The dark forces go out of control and attacks "
+                            + "The Dark Forces Go Out Of Control And Attacks "
                             + p.getName() + "!");
                     p.damage(1000000);
                   }
@@ -263,15 +263,15 @@ public class bankai extends JavaPlugin implements Listener {
     if (cmd.getName().equalsIgnoreCase("hallow")) {
       final Ichigo ichy = getIchigo(sender.getName());
       if (ichy == null) {
-        sender.sendMessage(ChatColor.RED + "You aren't in bankai state! Use /bankai");
+        sender.sendMessage(ChatColor.RED + "You Aren't In Bankai State! Use /bankai");
         return true;
       }
       if (ichy.getHallow()) {
-        sender.sendMessage(ChatColor.RED + "Already doing hallow state!");
+        sender.sendMessage(ChatColor.RED + "Already In Hallow State!");
         return true;
       }
       Bukkit.broadcastMessage(ChatColor.DARK_RED + sender.getName()
-          + " drags his hand across his face! A hallow mask appears!");
+          + " Suddenly Has A Hallow Mask On His Face!");
       player.getWorld().strikeLightning(player.getLocation());
       if (new Random().nextInt(3) == 1 || ichy.getBankaiTime() < 10
           || ichy.hasHallowed()) {
